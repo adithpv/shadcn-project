@@ -113,3 +113,36 @@ export const latestTransactions = [
     count: 1400,
   },
 ];
+
+export const todoItems = [
+  {
+    id: "item1",
+    checked: true,
+    text: "Finish the user onboarding flow for the dashboard, including welcome messages and tooltips.",
+  },
+  {
+    id: "item2",
+    checked: false,
+    text: "Refactor the authentication module to support OAuth and improve session handling.",
+  },
+  {
+    id: "item3",
+    checked: true,
+    text: "Design and implement the new blog layout for better readability and mobile responsiveness.",
+  },
+  {
+    id: "item4",
+    checked: false,
+    text: "Schedule a meeting with the marketing team to align on the product launch strategy.",
+  },
+  {
+    id: "item5",
+    checked: false,
+    text: "Write unit tests for the notification system to ensure it handles edge cases properly.",
+  },
+  {
+    id: "item6",
+    checked: true,
+    text: "Review the latest pull requests and leave feedback by the end of the day.",
+  },
+];
