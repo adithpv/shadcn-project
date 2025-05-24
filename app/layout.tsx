@@ -34,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
+        className={`${geistSans.variable} ${geistMono.variable} flex antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -44,7 +44,7 @@ export default async function RootLayout({
         >
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
-            <main className="w-full">
+            <main className="pt-20">
               <Navbar />
               <div className="px-4">{children}</div>
             </main>

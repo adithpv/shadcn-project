@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +12,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export type Payment = {
@@ -69,14 +69,14 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <div
           className={cn(
-            "px-2 py-1 rounded-full w-max text-xs font-medium",
+            "w-max rounded-full px-2 py-1 text-xs font-medium",
             status === "PENDING"
               ? "bg-yellow-100 text-yellow-800"
               : status === "PROCESSING"
-              ? "bg-blue-100 text-blue-800"
-              : status === "SUCCESS"
-              ? "bg-green-100 text-green-800"
-              : "bg-red-100 text-red-800"
+                ? "bg-blue-100 text-blue-800"
+                : status === "SUCCESS"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
           )}
         >
           {status as string}

@@ -6,24 +6,61 @@ import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 gap-4">
-      <div className="bg-primary-foreground p-4 rounded-lg lg:col-span-2 xl:col-span-1 2xl:col-span-2">
-        <AppBarChart />
+    <div className="mt-2.5 space-y-6 p-6">
+      {/* Header Section */}
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-semibold">Dashboard</h1>
+        <div className="flex items-center gap-4">
+          {/* Add any header actions/buttons here */}
+        </div>
       </div>
-      <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title="Latest Transactions" />
+
+      {/* Main Content Grid */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+        {/* Left Column - Main Charts */}
+        <div className="space-y-6 lg:col-span-8">
+          {/* Top Row - Bar Chart */}
+          <div className="bg-card rounded-xl p-6 shadow-sm">
+            <h2 className="mb-4 text-lg font-medium">Revenue Overview</h2>
+            <AppBarChart />
+          </div>
+
+          {/* Bottom Row - Area Chart */}
+          <div className="bg-card rounded-xl p-6 shadow-sm">
+            <h2 className="mb-4 text-lg font-medium">Performance Metrics</h2>
+            <AppAreaChart />
+          </div>
+        </div>
+
+        {/* Right Column - Side Content */}
+        <div className="space-y-6 lg:col-span-4">
+          {/* Todo List */}
+          <div className="bg-card rounded-xl p-6 shadow-sm">
+            <h2 className="mb-4 text-lg font-medium">Tasks</h2>
+            <TodoList />
+          </div>
+
+          {/* Pie Chart */}
+          <div className="bg-card rounded-xl p-6 shadow-sm">
+            <h2 className="mb-4 text-lg font-medium">Distribution</h2>
+            <AppPieChart />
+          </div>
+        </div>
       </div>
-      <div className="bg-primary-foreground p-4 rounded-lg">
-        <AppPieChart />
-      </div>
-      <div className="bg-primary-foreground p-4 rounded-lg">
-        <TodoList />
-      </div>
-      <div className="bg-primary-foreground p-4 rounded-lg ld:col-span-2 xl:col-span-1 2xl:col-span-2">
-        <AppAreaChart />
-      </div>
-      <div className="bg-primary-foreground p-4 rounded-lg">
-        <CardList title="Popular Content" />
+
+      {/* Bottom Section - Lists */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {/* Latest Transactions */}
+        <div className="bg-card rounded-xl p-6 shadow-sm">
+          <h2 className="mb-4 text-lg font-medium">Latest Transactions</h2>
+          <CardList title="Latest Transactions" />
+        </div>
+
+        {/* Popular Content */}
+        <div className="bg-card rounded-xl p-6 shadow-sm">
+          <h2 className="mb-4 text-lg font-medium">Popular Content</h2>
+          <CardList title="Popular Content" />
+        </div>
       </div>
     </div>
   );

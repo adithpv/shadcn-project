@@ -33,18 +33,39 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
-import { ChevronDown, ChevronUp, Plus, Projector, User2 } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Plus,
+  Projector,
+  User2,
+  Settings,
+  BarChart3,
+  Users,
+  Bell,
+  HelpCircle,
+  FileText,
+  Shield,
+  Database,
+  MessageSquare,
+  Mail,
+  Calendar,
+  Star,
+  Bookmark,
+  Trash2,
+  Archive,
+} from "lucide-react";
 
 const AppSidebar = () => {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="border-r">
       <SidebarHeader className="py-4">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/">
+              <Link href="/" className="flex items-center gap-2">
                 <Image src="/vercel.svg" alt="logo" width={20} height={20} />
-                Ren
+                <span className="font-semibold">Ren</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -52,8 +73,9 @@ const AppSidebar = () => {
       </SidebarHeader>
       <SidebarSeparator />
       <SidebarContent>
+        {/* Main Navigation */}
         <SidebarGroup>
-          <SidebarGroupLabel>Applications</SidebarGroupLabel>
+          <SidebarGroupLabel>Main</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items?.map((item) => (
@@ -72,6 +94,8 @@ const AppSidebar = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
+        {/* Projects Section */}
         <SidebarGroup>
           <SidebarGroupLabel>Projects</SidebarGroupLabel>
           <SidebarGroupAction>
@@ -81,17 +105,25 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/">
+                  <Link href="/projects">
                     <Projector />
-                    See all projects
+                    All Projects
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/">
-                    <Plus />
-                    Add Projects
+                  <Link href="/projects/favorites">
+                    <Star />
+                    Favorites
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/projects/archived">
+                    <Archive />
+                    Archived
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -99,11 +131,12 @@ const AppSidebar = () => {
           </SidebarContent>
         </SidebarGroup>
 
+        {/* Analytics Section */}
         <Collapsible defaultOpen className="group/collapsible">
           <SidebarGroup>
             <SidebarGroupLabel asChild>
               <CollapsibleTrigger>
-                Help
+                Analytics
                 <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
               </CollapsibleTrigger>
             </SidebarGroupLabel>
@@ -112,17 +145,25 @@ const AppSidebar = () => {
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link href="/">
-                        <Projector />
-                        See all projects
+                      <Link href="/analytics/dashboard">
+                        <BarChart3 />
+                        Dashboard
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link href="/">
-                        <Plus />
-                        Add Projects
+                      <Link href="/analytics/reports">
+                        <FileText />
+                        Reports
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href="/analytics/insights">
+                        <Database />
+                        Insights
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -132,33 +173,110 @@ const AppSidebar = () => {
           </SidebarGroup>
         </Collapsible>
 
+        {/* Communication Section */}
         <SidebarGroup>
-          <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
-
+          <SidebarGroupLabel>Communication</SidebarGroupLabel>
           <SidebarContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/">
-                    <Projector />
-                    See all projects
+                  <Link href="/messages">
+                    <MessageSquare />
+                    Messages
+                    <SidebarMenuBadge>3</SidebarMenuBadge>
                   </Link>
                 </SidebarMenuButton>
-                <SidebarMenuSub>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton asChild>
-                      <Link href="/">
-                        <Plus />
-                        Add Project
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/calendar">
+                    <Calendar />
+                    Calendar
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/notifications">
+                    <Bell />
+                    Notifications
+                    <SidebarMenuBadge>5</SidebarMenuBadge>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarContent>
+        </SidebarGroup>
+
+        {/* Settings Section */}
+        <Collapsible defaultOpen className="group/collapsible">
+          <SidebarGroup>
+            <SidebarGroupLabel asChild>
+              <CollapsibleTrigger>
+                Settings
+                <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+              </CollapsibleTrigger>
+            </SidebarGroupLabel>
+            <CollapsibleContent>
+              <SidebarContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href="/settings/profile">
+                        <User2 />
+                        Profile
                       </Link>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                </SidebarMenuSub>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href="/settings/security">
+                        <Shield />
+                        Security
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <Link href="/settings/preferences">
+                        <Settings />
+                        Preferences
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarContent>
+            </CollapsibleContent>
+          </SidebarGroup>
+        </Collapsible>
+
+        {/* Help & Support */}
+        <SidebarGroup>
+          <SidebarGroupLabel>Support</SidebarGroupLabel>
+          <SidebarContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/help">
+                    <HelpCircle />
+                    Help Center
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/documentation">
+                    <FileText />
+                    Documentation
+                  </Link>
+                </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarContent>
         </SidebarGroup>
       </SidebarContent>
+
+      {/* Footer with User Profile */}
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -169,9 +287,13 @@ const AppSidebar = () => {
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Account</DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Sign Out</DropdownMenuItem>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
+                <DropdownMenuItem>Account Settings</DropdownMenuItem>
+                <DropdownMenuItem>Security</DropdownMenuItem>
+                <DropdownMenuItem>Help & Support</DropdownMenuItem>
+                <DropdownMenuItem className="text-red-500">
+                  Sign Out
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
