@@ -1,5 +1,3 @@
-import React from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 import { items } from "@/lib/data";
@@ -17,9 +15,6 @@ import {
   SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarSeparator,
 } from "./ui/sidebar";
 import {
@@ -41,18 +36,14 @@ import {
   User2,
   Settings,
   BarChart3,
-  Users,
   Bell,
   HelpCircle,
   FileText,
   Shield,
   Database,
   MessageSquare,
-  Mail,
   Calendar,
   Star,
-  Bookmark,
-  Trash2,
   Archive,
 } from "lucide-react";
 
