@@ -1,5 +1,11 @@
 # Shadcn UI Component Showcase
 
+> **Note:** This project is actively being worked on.
+
+<p align="center">
+  <img src="./landingpage.jpg" alt="Project Preview" width="600" />
+</p>
+
 A demonstration project showcasing the capabilities and potential of [Shadcn UI](https://ui.shadcn.com/) components. This project serves as a visual playground and reference for implementing various UI patterns using Shadcn UI components.
 
 ## 🎯 Purpose
@@ -142,11 +148,5 @@ Feel free to:
 - Suggest new features
 - Submit pull requests
 - Share your own component implementations
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 Built with ❤️ using [Shadcn UI](https://ui.shadcn.com/)
